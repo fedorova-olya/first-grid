@@ -1,0 +1,205 @@
+*,*:after, *:before {
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+$header-bg: #fff9e6;
+$circle-bg: #ffc535;
+$text-color: #000;
+$button-bg: #ec4c24;
+
+body {
+    font-family: sans-serif;
+}
+
+.circle{
+    background: $circle-bg;
+    border-radius: 50%;
+    position: absolute;
+    
+}
+.circle_small{
+    left: -30px;
+    top: -40px;
+    width: 170px;
+    height: 170px;
+    z-index: 0;
+    position: absolute;
+}
+.circle-big{
+    right: -30px;
+    top: -80px;
+    width: 800px;
+    height: 800px;
+}
+
+.button{
+    display: inline-block;
+    padding: 24px 53px;
+    border-radius: 100px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: $button-bg;
+    box-shadow: 0 10px 40px rgba($button-bg, 0.5), 0 15px 50px rgba($button-bg, 0.5) ;
+}
+
+.link {
+    color: $button-bg;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.arrow{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.header{
+    position: relative;
+    min-height: 768px;
+    display: grid;
+    grid-template-columns: 1.5fr 4fr 2fr;
+    grid-template-areas: 
+        "logo nav contacts"
+        ". text .";
+    grid-template-rows: 2fr 10fr;
+    grid-column-gap: 20px;
+    align-items: center;
+    background: $header-bg;
+    overflow: hidden;
+    color: $text-color;
+    .logo{
+        grid-area: logo;
+        justify-self: center;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #000;
+        position: relative;
+        .logo__link{
+            position: relative;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #000;
+
+        }
+    }
+    .nav{
+        grid-area: nav;
+        position: relative;
+    }
+    .contacts{
+        grid-area: contacts;
+        align-items: center;
+        grid-template-columns: auto auto;
+        justify-self: center;
+        position: relative;
+        .contacts__link{
+            position: relative;
+        }
+        .link-phone{
+            font-size: 1.3rem ;
+            font-weight: 900;
+            color: $text-color; 
+            margin-right: 25px;
+        }
+        .link-callback{
+            color: $text-color;
+            text-transform: uppercase;
+            position: relative;
+            
+        }
+        .link-callback:after{
+            position: absolute;
+            height: 1px;
+            content: "";
+            width: 100%;
+            background-color: $text-color;
+            display: block;
+            bottom: 0;
+            right: 0;
+        }
+        
+
+    }
+
+    .header-img{
+        position: absolute;
+        bottom: 0;
+        right: 200px;
+    }
+    .text{
+        grid-area: text;
+        position: relative;
+        //align-self: start;
+        max-width: 1030px;
+        display: grid;
+        grid-row-gap: 70px;
+        justify-content: start;
+        .title{
+            font-size: 4rem;
+            margin: 0;
+        }
+        .subtitle{
+            font-size: 1.7rem;
+        }
+        .buttons{
+            .header__buttons_link{
+                margin-left: 30px;
+                position: relative;
+            }
+            .header__buttons_link:after{
+                position: absolute;
+                content: "";
+                height: 1px;
+                width: 100%;
+                background: $button-bg;
+                bottom: 0;
+                right: 0;
+            }
+
+        }
+        .arrow__link:before{
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-left: 3px #343434 solid;
+            border-bottom: 3px $text-color solid;
+            transform: rotate(45deg);
+
+        }
+        .arrow__link+.arrow__link:before{
+            transform: rotate(-135deg);
+
+        }
+        .thumbs{
+            .thumbs__link{
+            color: $text-color;
+            margin-right: 10px;
+            }
+        }
+
+    }
+    .nav__link{
+        margin-right: 20px;
+        color: $text-color;
+        font-size: 1.3rem;
+        .nav__link:last-child{
+            margin-right: 0;
+        }
+    }
+
+    
+    
+
+}
